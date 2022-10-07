@@ -5,20 +5,20 @@
 class Corgi < Formula
   desc "Command line interface for database configurations and other useful things, written in Go"
   homepage "https://github.com/Andriiklymiuk/corgi"
-  version "1.1.7"
+  version "1.1.8"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.7/corgi_1.1.7_Darwin_x86_64.tar.gz"
-      sha256 "4d950e36e3e4a880c3c942cd0c6445467e73cc828501ddc1d71ba98430d9de9e"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.8/corgi_1.1.8_Darwin_x86_64.tar.gz"
+      sha256 "2eefd7e5b1de53f2eb216fc3ff222a700ce58e73c2e0297feb19c14063d0a8a4"
 
       def install
         bin.install "corgi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.7/corgi_1.1.7_Darwin_arm64.tar.gz"
-      sha256 "e45fa250679a38e518750c0412b28c336422aef0f10696261589fc97f501cc32"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.8/corgi_1.1.8_Darwin_arm64.tar.gz"
+      sha256 "53df6b88e9c97b2e9b235592ebd1894c37458a75d835e879894764b822fa70e7"
 
       def install
         bin.install "corgi"
@@ -28,16 +28,16 @@ class Corgi < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.7/corgi_1.1.7_Linux_arm64.tar.gz"
-      sha256 "d8a82a182ce6be85a6cba515c8e244eb1992d165ec946392319cef6b9ae2556f"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.8/corgi_1.1.8_Linux_arm64.tar.gz"
+      sha256 "af4251e5c083eb6d2055e14c47145f62446a7978256ba6453d5dc1fa327edf8c"
 
       def install
         bin.install "corgi"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.7/corgi_1.1.7_Linux_x86_64.tar.gz"
-      sha256 "9706dedff0cb90d60ecd9351ac4f82c40b78fd7ceecbd0b9cdb777eef861c0f0"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.8/corgi_1.1.8_Linux_x86_64.tar.gz"
+      sha256 "d8783d838dbd5aa5f31f4c7e0cfaeab7e334ed365749e619c2aa7b20300fccbc"
 
       def install
         bin.install "corgi"
