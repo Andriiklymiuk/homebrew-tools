@@ -5,20 +5,20 @@
 class Corgi < Formula
   desc "Command line interface for database configurations and other useful things, written in Go"
   homepage "https://github.com/Andriiklymiuk/corgi"
-  version "1.1.34"
+  version "1.1.35"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.34/corgi_1.1.34_Darwin_x86_64.tar.gz"
-      sha256 "93dc2e54350448b8c3a0a0fc979c971e85ce3fd9fd5e3048d5584d839fff5a9b"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.35/corgi_1.1.35_Darwin_x86_64.tar.gz"
+      sha256 "a4b71ed2392466eccac8981f02e09e02961c8f38bbcb1e42561aa26470929d88"
 
       def install
         bin.install "corgi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.34/corgi_1.1.34_Darwin_arm64.tar.gz"
-      sha256 "f9b434e71a600169d1758e37c63801671b6633195bf74deb8afaccbca8d12874"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.35/corgi_1.1.35_Darwin_arm64.tar.gz"
+      sha256 "b6e08d61a892e0e72c24d3df6730ab3e50ffa50705c608889f9076b27f1330d8"
 
       def install
         bin.install "corgi"
@@ -27,17 +27,17 @@ class Corgi < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.34/corgi_1.1.34_Linux_arm64.tar.gz"
-      sha256 "2aaa6a935c3b6b37ac7425f8688ea6c503395dd21e4cdc6ed00b88b995e960c2"
+    if Hardware::CPU.intel?
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.35/corgi_1.1.35_Linux_x86_64.tar.gz"
+      sha256 "a4d55f70b1c7a4954505547d6ad48551a07507730c521d3aa439647f7d675bf2"
 
       def install
         bin.install "corgi"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.34/corgi_1.1.34_Linux_x86_64.tar.gz"
-      sha256 "37e6d59c17227f38f4b3eda6f496e31a9f2f06e8da62a3ca7678806fad967d18"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.35/corgi_1.1.35_Linux_arm64.tar.gz"
+      sha256 "0434d60bc1120b9edddae1a9563c6fe703d1846c135abcd2255542a27212d5ff"
 
       def install
         bin.install "corgi"
