@@ -5,20 +5,20 @@
 class Corgi < Formula
   desc "Command line interface for database configurations and other useful things, written in Go"
   homepage "https://github.com/Andriiklymiuk/corgi"
-  version "1.1.96"
+  version "1.1.97"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.96/corgi_1.1.96_darwin_amd64.tar.gz"
-      sha256 "5d35ddb9da4369505869fdcb091a14e3fd4b6434a72a22fab187e93fd4604330"
+    if Hardware::CPU.arm?
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.97/corgi_1.1.97_darwin_arm64.tar.gz"
+      sha256 "cf2350cc8aa6eaa180c6dae1e65d1c7c2602c0ca1a1fdc28591df3a36d4e9614"
 
       def install
         bin.install "corgi"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.96/corgi_1.1.96_darwin_arm64.tar.gz"
-      sha256 "0619147dc0814680b50c7e17eb5c93ae32373911670b97564b2d1e9bef869aee"
+    if Hardware::CPU.intel?
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.97/corgi_1.1.97_darwin_amd64.tar.gz"
+      sha256 "2fade1f3a8407ccdfa307126b222ebe2aed5fa00dc601dcad26bc07c50f22f29"
 
       def install
         bin.install "corgi"
@@ -28,16 +28,16 @@ class Corgi < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.96/corgi_1.1.96_linux_arm64.tar.gz"
-      sha256 "6c16f3d85e17a4cbace804e6864f8cdcabaee12dc2803d10ad20309380963584"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.97/corgi_1.1.97_linux_arm64.tar.gz"
+      sha256 "1db9651da8dc06a22c35c9db53413f7cdfda4d549e95a036824b3a5363092525"
 
       def install
         bin.install "corgi"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.96/corgi_1.1.96_linux_amd64.tar.gz"
-      sha256 "dc5c6d550cf707036443c08c84deaad73dfcb294cc4c34d14cde143ca3a3ca3f"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.1.97/corgi_1.1.97_linux_amd64.tar.gz"
+      sha256 "61f10ad17359f4e625ea56910d6c422c5bddfa39509009a0d1b945bfdafa2b5d"
 
       def install
         bin.install "corgi"
