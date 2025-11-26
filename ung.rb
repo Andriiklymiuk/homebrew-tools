@@ -5,20 +5,20 @@
 class Ung < Formula
   desc "Universal Next-Gen Billing & Tracking CLI - Manage invoices, clients, and time tracking"
   homepage "https://github.com/Andriiklymiuk/ung"
-  version "1.0.12"
+  version "1.0.15"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/ung/releases/download/v1.0.12/ung_1.0.12_darwin_amd64.tar.gz"
-      sha256 "a6bc41c678a33114686a58ad596bda391defed809a7c216bff770f41bbe16e08"
+      url "https://github.com/Andriiklymiuk/ung/releases/download/v1.0.15/ung_1.0.15_darwin_amd64.tar.gz"
+      sha256 "4edcaebf127be6281a96ae88b12891f28079a7408dd5d3e0d427fd3a6e740ebd"
 
       def install
         bin.install "ung"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Andriiklymiuk/ung/releases/download/v1.0.12/ung_1.0.12_darwin_arm64.tar.gz"
-      sha256 "29de2cbdd0df42ead0802079884699a2d48e326fc157b8ab2ecd614400e87484"
+      url "https://github.com/Andriiklymiuk/ung/releases/download/v1.0.15/ung_1.0.15_darwin_arm64.tar.gz"
+      sha256 "a287ca8c1d5425c819e0a3faec671c8f96eee1e8649178322b7fbdf90ea6f9df"
 
       def install
         bin.install "ung"
@@ -28,15 +28,15 @@ class Ung < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/ung/releases/download/v1.0.12/ung_1.0.12_linux_amd64.tar.gz"
-      sha256 "e193b01f4cfa14e77d6a831216434d0233435f493032b3e0b7a92ed99a9ee31d"
+      url "https://github.com/Andriiklymiuk/ung/releases/download/v1.0.15/ung_1.0.15_linux_amd64.tar.gz"
+      sha256 "0930520ba79d8e9220f931b66eb0004dc7dc5b3ef96ff94f0e96bcfbebc55d6e"
       def install
         bin.install "ung"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/ung/releases/download/v1.0.12/ung_1.0.12_linux_arm64.tar.gz"
-      sha256 "0191f2ef7275d10f56b63f19f0328c924fa4d87dc3a2bba2bad339a2609240a2"
+      url "https://github.com/Andriiklymiuk/ung/releases/download/v1.0.15/ung_1.0.15_linux_arm64.tar.gz"
+      sha256 "b41aa4e523b507ec634d1a5bab2490d666f00dad9206c87e8b88c878fa1b0005"
       def install
         bin.install "ung"
       end
