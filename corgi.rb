@@ -5,41 +5,67 @@
 class Corgi < Formula
   desc "Command line interface for database configurations and other useful things, written in Go"
   homepage "https://github.com/Andriiklymiuk/corgi"
-  version "1.15.20"
+  version "1.16.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.15.20/corgi_1.15.20_darwin_amd64.tar.gz"
-      sha256 "06e8a6646802b9285cb2c8f67c0cebab9be2639d07c32731a60e081cf9d7d721"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.0/corgi_1.16.0_darwin_amd64.tar.gz"
+      sha256 "a77839bf7fbe744a3e58472c510d30f3dcb103b647be19025a737c305b54462e"
 
       define_method(:install) do
         bin.install "corgi"
+        bash_completion.install "completions/corgi.bash" => "corgi"
+        zsh_completion.install  "completions/corgi.zsh"  => "_corgi"
+        fish_completion.install "completions/corgi.fish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.15.20/corgi_1.15.20_darwin_arm64.tar.gz"
-      sha256 "5442bc5f7b2416940ffac6938b2689239efe48ed8586af0d17fff48ce0afe80d"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.0/corgi_1.16.0_darwin_arm64.tar.gz"
+      sha256 "ed6d62fe1c24729fbaa5ce9fd1f09d4e5507337cada79c81b8caa6d49aa98fa2"
 
       define_method(:install) do
         bin.install "corgi"
+        bash_completion.install "completions/corgi.bash" => "corgi"
+        zsh_completion.install  "completions/corgi.zsh"  => "_corgi"
+        fish_completion.install "completions/corgi.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.15.20/corgi_1.15.20_linux_amd64.tar.gz"
-      sha256 "b695aba010411138497d78d14bcce3df466230efb485b156e9d8f0a052a375e8"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.0/corgi_1.16.0_linux_amd64.tar.gz"
+      sha256 "5075d659c84503e838db733c88253931c51dbd3a4a3f32af6fd436ab444f4fed"
       define_method(:install) do
         bin.install "corgi"
+        bash_completion.install "completions/corgi.bash" => "corgi"
+        zsh_completion.install  "completions/corgi.zsh"  => "_corgi"
+        fish_completion.install "completions/corgi.fish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.15.20/corgi_1.15.20_linux_arm64.tar.gz"
-      sha256 "86d0a34a7da97e49aa481b3b8329792d45b575ae53eaafa593dd98f1738a62b3"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.0/corgi_1.16.0_linux_arm64.tar.gz"
+      sha256 "bef2bb8ad40eb26b3d1cdbe15111dcb10150a14909bdad17dfa334eb15b99b49"
       define_method(:install) do
         bin.install "corgi"
+        bash_completion.install "completions/corgi.bash" => "corgi"
+        zsh_completion.install  "completions/corgi.zsh"  => "_corgi"
+        fish_completion.install "completions/corgi.fish"
       end
     end
+  end
+
+  def caveats
+    <<~EOS
+      Shell tab-completion installed for bash, zsh, fish.
+        corgi run --services <TAB>      # services from corgi-compose.yml
+        corgi run --dbServices <TAB>    # db_services
+        corgi script -n <TAB>           # script names per service
+        corgi tunnel <TAB>              # tunnel-able services
+      zsh users may need to run `compinit` once or open a new shell.
+
+      What's new in this release:
+        https://github.com/Andriiklymiuk/corgi/releases/tag/v#{version}
+    EOS
   end
 end
