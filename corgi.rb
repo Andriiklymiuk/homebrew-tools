@@ -5,12 +5,12 @@
 class Corgi < Formula
   desc "Command line interface for database configurations and other useful things, written in Go"
   homepage "https://github.com/Andriiklymiuk/corgi"
-  version "1.16.1"
+  version "1.16.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.1/corgi_1.16.1_darwin_amd64.tar.gz"
-      sha256 "ef094de66ce0cf45df1027ac84113358729810438c37c6a7b042729843881471"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.2/corgi_1.16.2_darwin_amd64.tar.gz"
+      sha256 "035ed3294396829106298fc140f381435a47a14bee483ac0c910e4d17057f76a"
 
       define_method(:install) do
         bin.install "corgi"
@@ -20,8 +20,8 @@ class Corgi < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.1/corgi_1.16.1_darwin_arm64.tar.gz"
-      sha256 "d82e291ae4b63db8e99e37267d9a0c5476cdf17ef79adb11dd1342755f21b5d0"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.2/corgi_1.16.2_darwin_arm64.tar.gz"
+      sha256 "f4b316c946b3aaffc77fab9bad72c2305f8e261a9f9f98bf52002f65121590d4"
 
       define_method(:install) do
         bin.install "corgi"
@@ -34,8 +34,8 @@ class Corgi < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.1/corgi_1.16.1_linux_amd64.tar.gz"
-      sha256 "1e78cfce8d49db7b931b45ea2b93de082e24f86dffb802f14b522a0dddd313eb"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.2/corgi_1.16.2_linux_amd64.tar.gz"
+      sha256 "f5d6dd2ae930381372cc7f6fa2ecaad4ae29059d62a28c27fa651c961910858b"
       define_method(:install) do
         bin.install "corgi"
         bash_completion.install "completions/corgi.bash" => "corgi"
@@ -44,8 +44,8 @@ class Corgi < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.1/corgi_1.16.1_linux_arm64.tar.gz"
-      sha256 "678cf54ebd513c75dd1344598cf257e7648dfbd07dcfc432e2def00dd738c284"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.16.2/corgi_1.16.2_linux_arm64.tar.gz"
+      sha256 "4c1d12d6affbb4b042336669f275e8e0cee43487bd42464dc9696ca62fe71441"
       define_method(:install) do
         bin.install "corgi"
         bash_completion.install "completions/corgi.bash" => "corgi"
@@ -57,14 +57,22 @@ class Corgi < Formula
 
   def caveats
     <<~EOS
-      Shell tab-completion installed for bash, zsh, fish.
+      Shell tab-completion installed for bash, zsh, fish:
         corgi run --services <TAB>      # services from corgi-compose.yml
         corgi run --dbServices <TAB>    # db_services
         corgi script -n <TAB>           # script names per service
-        corgi tunnel <TAB>              # tunnel-able services
-      zsh users may need to run `compinit` once or open a new shell.
+        corgi tunnel <TAB>              # tunnelable services
 
-      What's new in this release:
+      zsh users — if `<TAB>` shows files instead of names, your shell
+      isn't loading brew's site-functions. Add this to ~/.zshrc BEFORE
+      `compinit` (one-time, fixes all brew-installed completions):
+
+        FPATH="#{HOMEBREW_PREFIX}/share/zsh/site-functions:$FPATH"
+        autoload -Uz compinit && compinit
+
+      Then: `rm -f ~/.zcompdump* && exec zsh`
+
+      What's new:
         https://github.com/Andriiklymiuk/corgi/releases/tag/v#{version}
     EOS
   end
