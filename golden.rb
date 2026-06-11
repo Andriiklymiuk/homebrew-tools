@@ -1,22 +1,22 @@
 class Golden < Formula
   desc "Run and test Postman v2.1 collections from the terminal — the CLI for Golden Retriever."
   homepage "https://github.com/Andriiklymiuk/golden-cli"
-  version "2.0.16"
+  version "2.0.17"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/Andriiklymiuk/golden-cli/releases/download/v2.0.16/golden-cli-aarch64-apple-darwin.tar.xz"
+      url "https://github.com/Andriiklymiuk/golden-cli/releases/download/v2.0.17/golden-cli-aarch64-apple-darwin.tar.xz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/golden-cli/releases/download/v2.0.16/golden-cli-x86_64-apple-darwin.tar.xz"
+      url "https://github.com/Andriiklymiuk/golden-cli/releases/download/v2.0.17/golden-cli-x86_64-apple-darwin.tar.xz"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/Andriiklymiuk/golden-cli/releases/download/v2.0.16/golden-cli-aarch64-unknown-linux-musl.tar.xz"
-      sha256 "2f91a3bc5c8d762df6a19f7157d087abf64dad6f89ad8c725159356025369786"
+      url "https://github.com/Andriiklymiuk/golden-cli/releases/download/v2.0.17/golden-cli-aarch64-unknown-linux-musl.tar.xz"
+      sha256 "801dad1b024bf4720e19a40229ed59157bba93847b37085e2f2549426aae8ffa"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/golden-cli/releases/download/v2.0.16/golden-cli-x86_64-unknown-linux-musl.tar.xz"
+      url "https://github.com/Andriiklymiuk/golden-cli/releases/download/v2.0.17/golden-cli-x86_64-unknown-linux-musl.tar.xz"
     end
   end
   license "MIT"
