@@ -5,12 +5,12 @@
 class Corgi < Formula
   desc "Command line interface for database configurations and other useful things, written in Go"
   homepage "https://github.com/Andriiklymiuk/corgi"
-  version "1.19.39"
+  version "1.19.40"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.19.39/corgi_1.19.39_darwin_amd64.tar.gz"
-      sha256 "6a320c631fd5011ce411990a065021a07f4ffa3d5d1f0da1ea66b0c1ba2f0be7"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.19.40/corgi_1.19.40_darwin_amd64.tar.gz"
+      sha256 "71d503474f7f7e4e5aceb5af579f10e8578c3d890f821e827adff83b9c734b74"
 
       define_method(:install) do
         bin.install "corgi"
@@ -20,8 +20,8 @@ class Corgi < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.19.39/corgi_1.19.39_darwin_arm64.tar.gz"
-      sha256 "b9fd556a63c10f3503592a578ff3119c25b676260f30541960bda83c26f2e616"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.19.40/corgi_1.19.40_darwin_arm64.tar.gz"
+      sha256 "d48b0bca07e6c320da0d10f05800fcd232eea87f540e8bd5645a8a22707619e0"
 
       define_method(:install) do
         bin.install "corgi"
@@ -34,8 +34,8 @@ class Corgi < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.19.39/corgi_1.19.39_linux_amd64.tar.gz"
-      sha256 "08f2963af01d3f44ca6d5749b92843c939179f9e147260f9d02af37fb77f4edb"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.19.40/corgi_1.19.40_linux_amd64.tar.gz"
+      sha256 "1f8aed865af11adc1efd5fde89d04a0f0a271f80ff3d8af611acde6073de82b7"
       define_method(:install) do
         bin.install "corgi"
         bash_completion.install "completions/corgi.bash" => "corgi"
@@ -44,8 +44,8 @@ class Corgi < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.19.39/corgi_1.19.39_linux_arm64.tar.gz"
-      sha256 "a884526147e26d6fcdaa06df6ce4033e4ee99e573100da8639ef5fea0d06788f"
+      url "https://github.com/Andriiklymiuk/corgi/releases/download/v1.19.40/corgi_1.19.40_linux_arm64.tar.gz"
+      sha256 "c826c8fc62876efef91af06047f403573d3cc229b5b0e4ca62ebde74a764f72d"
       define_method(:install) do
         bin.install "corgi"
         bash_completion.install "completions/corgi.bash" => "corgi"
