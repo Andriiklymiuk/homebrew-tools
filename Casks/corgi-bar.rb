@@ -15,7 +15,7 @@ cask "corgi-bar" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
   depends_on cask: "andriiklymiuk/tools/corgi"
 
   app "corgi-bar.app"
