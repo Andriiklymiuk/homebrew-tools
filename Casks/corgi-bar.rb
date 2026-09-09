@@ -22,8 +22,8 @@ cask "corgi-bar" do
 
   # Until the app ships Developer-ID signed, Gatekeeper would refuse a
   # quarantined download; the flag is dropped so the app opens like any other.
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{appdir}/corgi-bar.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/corgi-bar.app"], must_succeed: false
   end
 
   uninstall quit: "com.andriiklymiuk.corgi-bar"
