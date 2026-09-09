@@ -1,12 +1,15 @@
 name: update corgi-bar cask
 
-# The corgi-bar repo has no token for this tap, so the tap pulls: every few
-# hours, and on demand, it reads the latest corgi-bar release and rewrites
-# the cask's version and checksum when they changed.
+# The tap pulls: every ten minutes, on demand, and the moment corgi-bar's
+# release job sends a repository_dispatch (when it has a TAP_TOKEN). It reads
+# the latest corgi-bar release and rewrites the cask's version and checksum
+# when they changed.
 on:
   schedule:
-    - cron: "17 */3 * * *"
+    - cron: "*/10 * * * *"
   workflow_dispatch:
+  repository_dispatch:
+    types: [corgi-bar-release]
 
 permissions:
   contents: write
