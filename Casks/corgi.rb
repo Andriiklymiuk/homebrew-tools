@@ -4,25 +4,25 @@ cask "corgi" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/corgi"], must_succeed: false
   end
 
-  version "2.19.8"
+  version "2.19.9"
 
   on_macos do
     on_arm do
-      sha256 "14ff11531599d1974dfcdaedbb14c1c18376b36b466f5e78d8e17de3235e9822"
+      sha256 "5c1f5c67b39a00ffafec967bcb1c9054b20f64d3855e8a60a69805d30d39ccc1"
       url "https://github.com/Andriiklymiuk/corgi/releases/download/v#{version}/corgi_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "2963c1745a465feddb2168d88782faf108bad9d09e14d86c755968f99dffc544"
+      sha256 "710ca09abe715513068902a38c5b3b4df9f6cdc01125f6e0a7c35e048f9ea346"
       url "https://github.com/Andriiklymiuk/corgi/releases/download/v#{version}/corgi_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "6b7971fc7b9afd897e339abef7e3610e81ddd7041e13ace82f4ef70a18d1b008"
+      sha256 "9d0fa8ba68d3659aff9d3b39644520a987022cd4a32ad2278e7e74d100807ae4"
       url "https://github.com/Andriiklymiuk/corgi/releases/download/v#{version}/corgi_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "51c763d43e064fc94c317e610c4aae4d7797cda1d1bbaddea5e5698913a73a02"
+      sha256 "436a34ce7ccf32163cf4bb26763737a403082e7b828248b0fdfb71eda03829c3"
       url "https://github.com/Andriiklymiuk/corgi/releases/download/v#{version}/corgi_#{version}_linux_amd64.tar.gz"
     end
   end
@@ -43,22 +43,7 @@ cask "corgi" do
   # No zap stanza required
 
   caveats <<~EOS
-    Shell tab-completion installed for bash, zsh, fish:
-      corgi run --services <TAB>      # services from corgi-compose.yml
-      corgi run --dbServices <TAB>    # db_services
-      corgi script -n <TAB>           # script names per service
-      corgi tunnel <TAB>              # tunnelable services
-
-    zsh users — if `<TAB>` shows files instead of names, your shell
-    isn't loading brew's site-functions. Add this to ~/.zshrc BEFORE
-    `compinit` (one-time, fixes all brew-installed completions):
-
-      FPATH="#{HOMEBREW_PREFIX}/share/zsh/site-functions:$FPATH"
-      autoload -Uz compinit && compinit
-
-    Then: `rm -f ~/.zcompdump* && exec zsh`
-
-    What's new:
-      https://github.com/Andriiklymiuk/corgi/releases/tag/v#{version}
+    What's new: https://github.com/Andriiklymiuk/corgi/releases/tag/v#{version}
+    Tab completion installed for bash, zsh, fish — if <TAB> shows files: corgi completion zsh --help
   EOS
 end
