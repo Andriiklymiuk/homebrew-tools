@@ -2,8 +2,8 @@
 # github.com/Andriiklymiuk/corgi-bar release. Do not edit the version or
 # sha256 by hand.
 cask "corgi-bar" do
-  version "0.12.3"
-  sha256 "79e3c3d2bfc5de42ddcb4f1a5d4a8bba9f6f8842eed0a3149a03cbb59fbe1b0c"
+  version "0.12.4"
+  sha256 "d4b884de77c08dce432984dcc632ad2f6d47272dac9e01f8bdd7f9a0542cdab9"
 
   url "https://github.com/Andriiklymiuk/corgi-bar/releases/download/v#{version}/corgi-bar.zip"
   name "corgi-bar"
