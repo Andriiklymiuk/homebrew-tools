@@ -4,25 +4,25 @@ cask "corgi" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/corgi"], must_succeed: false
   end
 
-  version "2.42.2"
+  version "2.42.3"
 
   on_macos do
     on_arm do
-      sha256 "ebeb58bdf3592934f3dca78a6a36f492901501d6afda83682d7f47796df75898"
+      sha256 "b84c6d5eb9588c311b0eb05dfb48d22600b41b7b759acbf725d80b99ca028646"
       url "https://github.com/Andriiklymiuk/corgi/releases/download/v#{version}/corgi_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "a23995cda74f907d4359d7874fac2d10408d778faf4602e97ddf834c1235af93"
+      sha256 "73dbed9a69a576704ed2eb3e333d12b292f1809d230a019476a1aa38db80fcd0"
       url "https://github.com/Andriiklymiuk/corgi/releases/download/v#{version}/corgi_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "e8e7a236281ffccb02e9193386cb2a3a2236d54b4b5b7d1cf479353c502993bd"
+      sha256 "be8a5f327d4b6f91e49820975f2be6aa340e9210b137d7da884fa1fd078d4ba9"
       url "https://github.com/Andriiklymiuk/corgi/releases/download/v#{version}/corgi_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "68a948475378f24dd294412c3d6d773b6292acb97a56fa2b1f6fe2c6b45a73b8"
+      sha256 "8a95fe91a6329042f2b1a056c6ed9b8b27c6b9ecc5c02439c0db7404b963a833"
       url "https://github.com/Andriiklymiuk/corgi/releases/download/v#{version}/corgi_#{version}_linux_amd64.tar.gz"
     end
   end
